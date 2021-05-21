@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import TaskList from "./Components/Tasks/TaskList";
+import AddTask from "./Components/Tasks/AddTask";
+import { useState, Fragment } from "react";
 
-function App() {
+const App = () => {
+  const [taskList, setTaskList] = useState([]);
+
+  const addTaskHandler = (newTask) => {
+    setTaskList((prevTasks) => [
+      ...prevTasks,
+      { task: newTask, id: Math.random().toString() },
+    ]);
+  };
+
+  const deleteTaskHandler = (deleteTask) => {
+    setTaskList(taskList.filter((task) => task.task !== deleteTask));
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <AddTask onAddTask={addTaskHandler} />
+      {taskList.map((task) => (
+        <TaskList
+          task={task.task}
+          key={task.id}
+          onDeleteTask={deleteTaskHandler}
+        />
+      ))}
+    </Fragment>
   );
-}
+};
 
 export default App;

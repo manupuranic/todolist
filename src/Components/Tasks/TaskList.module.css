@@ -1,0 +1,85 @@
+.tasklist {
+  position: relative;
+  max-width: 60%;
+  padding: 1rem;
+  padding-left: 0.1rem;
+  margin: 0.3rem auto;
+  background: white;
+  cursor: pointer;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.tasklist input {
+  cursor: pointer;
+}
+
+.tasklist label > input[type="checkbox"] {
+  display: none;
+}
+
+.tasklist label > input[type="checkbox"] + *::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 0.2rem;
+  border-color: rgb(88, 110, 233);
+  margin-right: 0.5rem;
+}
+
+.tasklist label > input[type="checkbox"]:checked + *::before {
+  content: "✔";
+  color: white;
+  background-color: rgb(88, 110, 233);
+  border-color: rgb(88, 110, 233);
+  font-family: "Original Surfer", cursive;
+}
+
+.tasklist label > input[type="checkbox"]:checked + * {
+  color: rgb(133, 131, 131);
+}
+
+.tasklist span {
+  padding: 1rem;
+  vertical-align: middle;
+  cursor: pointer;
+  font-size: larger;
+}
+
+.crosstext {
+  text-decoration: line-through;
+  color: rgb(133, 131, 131);
+  font-style: italic;
+}
+
+.tasklist button {
+  position: absolute;
+  display: inline;
+  background-color: rgb(241, 74, 124);
+  padding: 0.4rem;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  outline: none;
+  color: white;
+  vertical-align: middle;
+  bottom: 9px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.tasklist button:hover {
+  background-color: rgb(247, 99, 143);
+}
+
+.tasklist button:focus {
+  outline: none;
+  border-color: rgb(241, 74, 124);
+}

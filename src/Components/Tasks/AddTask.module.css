@@ -1,0 +1,40 @@
+.container {
+  background-color: rgb(53, 156, 240);
+  max-width: 60%;
+  padding: 1rem;
+  margin: 1rem auto 2rem auto;
+}
+
+.container input {
+  font: inherit;
+  display: inline;
+  width: 80%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0.4rem;
+  margin: 1rem;
+  margin-right: 0.5rem;
+}
+
+.container input:focus {
+  outline: none;
+  border-color: #4f005f;
+}
+
+/* @media (max-width: 768px) {
+  .button {
+    display: none;
+  }
+
+  .button:after {
+    width: 90%;
+    content: "Add Task";
+    justify-content: ;
+  }
+
+  .container input {
+    width: 90%;
+  }
+} */
+
+/* rgb(153, 83, 245) */
